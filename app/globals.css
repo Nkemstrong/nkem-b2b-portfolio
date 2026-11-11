@@ -1,0 +1,317 @@
+﻿@import "tailwindcss";
+
+:root {
+  --background: #f8f6f1;
+  --foreground: #17233b;
+  --primary: #7257d9;
+  --secondary: #3268d5;
+  --muted: #697386;
+  --border: #e8e4dc;
+  --surface: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+::selection {
+  background: #7257d9;
+  color: #ffffff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+
+.profile-container {
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+}
+
+.profile-float {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+
+  animation: portraitFloat 5s ease-in-out infinite;
+
+  filter: drop-shadow(0 0 35px rgba(0, 132, 255, 0.16));
+
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 65%,
+    rgba(0, 0, 0, 0.9) 78%,
+    rgba(0, 0, 0, 0.45) 90%,
+    transparent 100%
+  );
+
+  mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 65%,
+    rgba(0, 0, 0, 0.9) 78%,
+    rgba(0, 0, 0, 0.45) 90%,
+    transparent 100%
+  );
+}
+
+@keyframes portraitFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-float {
+    animation: none;
+  }
+}
+
+
+/* PROJECT PORTFOLIO CARDS */
+
+.project-card {
+  opacity: 0;
+  animation: projectReveal 0.65s ease forwards;
+  will-change: transform, opacity;
+}
+
+.project-preview {
+  transition: background 0.35s ease;
+}
+
+.project-card:hover .project-preview {
+  background: linear-gradient(135deg, #1a466a, #0a2034);
+}
+
+.project-card:hover .project-preview > div:first-child {
+  transform: scale(1.08);
+}
+
+.project-preview > div:first-child {
+  transition: transform 0.5s ease;
+}
+
+@keyframes projectReveal {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card {
+    opacity: 1;
+    animation: none;
+    transition: none;
+  }
+
+  .project-card:hover {
+    transform: none;
+  }
+}
+
+/* FOUR DISTINCT SERVICE CARD COLOURS */
+
+/* 1. Deep red */
+.service-card:nth-child(1) {
+  background: #702b2b;
+  border-color: #914343;
+}
+
+/* 2. Warm cream */
+.service-card:nth-child(2) {
+  background: #f2e5ce;
+  border-color: #d8bd98;
+}
+
+/* 3. Rich brown */
+.service-card:nth-child(3) {
+  background: #75462f;
+  border-color: #986344;
+}
+
+/* 4. Burnt orange */
+.service-card:nth-child(4) {
+  background: #c76b2b;
+  border-color: #e28a43;
+}
+
+/* Text and icon colours on the cream card */
+.service-card:nth-child(2) h3 {
+  color: #432b20;
+}
+
+.service-card:nth-child(2) p {
+  color: #654a37;
+}
+
+.service-card:nth-child(2) svg {
+  color: #a65324;
+}
+
+/* Hover effects */
+.service-card:nth-child(1):hover {
+  background: #843535;
+}
+
+.service-card:nth-child(2):hover {
+  background: #f8ecd9;
+}
+
+.service-card:nth-child(3):hover {
+  background: #865337;
+}
+
+.service-card:nth-child(4):hover {
+  background: #d77a35;
+}
+
+
+/* =========================================
+   SERVICES - FOUR DISTINCT BRAND COLOURS
+========================================= */
+
+.service-card {
+  min-height: 245px;
+  transition:
+    transform 0.35s ease,
+    background-color 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* CARD 1 - DEEP RED */
+.service-card-1 {
+  background-color: #702B2B;
+  border-color: #914343;
+  color: #F2E5CE;
+}
+
+.service-card-1 .service-icon {
+  color: #F0A04B;
+}
+
+/* CARD 2 - WARM CREAM */
+.service-card-2 {
+  background-color: #F2E5CE;
+  border-color: #D8BD98;
+  color: #432B20;
+}
+
+.service-card-2 .service-icon {
+  color: #A65324;
+}
+
+/* CARD 3 - RICH BROWN */
+.service-card-3 {
+  background-color: #75462F;
+  border-color: #986344;
+  color: #F2E5CE;
+}
+
+.service-card-3 .service-icon {
+  color: #E9A05C;
+}
+
+/* CARD 4 - BURNT ORANGE */
+.service-card-4 {
+  background-color: #C76B2B;
+  border-color: #E28A43;
+  color: #FFF4E7;
+}
+
+.service-card-4 .service-icon {
+  color: #FFF0D9;
+}
+
+/* DESCRIPTION COLOURS */
+.service-card-1 p,
+.service-card-3 p {
+  color: rgba(242, 229, 206, 0.85);
+}
+
+.service-card-2 p {
+  color: #654A37;
+}
+
+.service-card-4 p {
+  color: rgba(255, 244, 231, 0.9);
+}
+
+/* HOVER EFFECTS */
+.service-card-1:hover {
+  background-color: #843535;
+  border-color: #D98232;
+  box-shadow: 0 12px 30px rgba(112, 43, 43, 0.25);
+}
+
+.service-card-2:hover {
+  background-color: #F8ECD9;
+  border-color: #B8753F;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.service-card-3:hover {
+  background-color: #865337;
+  border-color: #D98232;
+  box-shadow: 0 12px 30px rgba(117, 70, 47, 0.25);
+}
+
+.service-card-4:hover {
+  background-color: #D77A35;
+  border-color: #F2B16F;
+  box-shadow: 0 12px 30px rgba(199, 107, 43, 0.25);
+}
+
+/* ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+  .service-card {
+    transition: none;
+  }
+
+  .service-card:hover {
+    transform: none;
+  }
+}
