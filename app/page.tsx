@@ -465,7 +465,7 @@ export default function Home() {
       {/* FEATURED PROJECTS */}
       <section id="projects" className="bg-[#041321] py-16 sm:py-20">
         {/* PROJECT SECTION HEADING */}
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="mb-2 flex items-center gap-3">
             <span className="h-[2px] w-10 bg-[#168cf5]" />
             <p className="text-sm font-bold tracking-[0.2em] text-[#48aaff]">
@@ -483,7 +483,7 @@ export default function Home() {
             Each project highlights the tools, strategies and deliverables involved.
           </p>
         </div>
-        <div className="mx-auto mt-8 grid max-w-6xl gap-5 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="mx-auto mt-8 grid max-w-6xl grid-cols-1 gap-5 px-4 sm:px-6 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project, index) => (
             <article
               key={project.number}
@@ -510,16 +510,16 @@ export default function Home() {
               </div>
 
               {/* Project information */}
-              <div className="p-4 sm:p-4">
+              <div className="p-5 sm:p-5 lg:p-4">
                 <p className="text-[10px] font-bold tracking-wider text-[#48aaff]">
                   {project.category}
                 </p>
 
-                <h3 className="mt-2 text-base font-bold leading-snug text-white transition-colors group-hover:text-[#48aaff]">
+                <h3 className="mt-2 text-base font-bold leading-snug text-white transition-colors group-hover:text-[#48aaff] sm:text-lg">
                   {project.title}
                 </h3>
 
-                <p className="mt-3 text-xs leading-6 text-[#b1c2d2]">
+                <p className="mt-3 text-sm leading-6 text-[#b1c2d2]">
                   {project.description}
                 </p>
 
@@ -527,7 +527,7 @@ export default function Home() {
                   <p className="text-[10px] font-bold tracking-wider text-[#48aaff]">
                     WORK DELIVERED
                   </p>
-                  <p className="mt-1.5 text-xs leading-5 text-white/75">
+                  <p className="mt-1.5 text-sm leading-5 text-white/75">
                     {project.outcome}
                   </p>
                 </div>
