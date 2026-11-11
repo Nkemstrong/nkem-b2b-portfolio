@@ -3,6 +3,8 @@ import Image from "next/image";
 import {
   ArrowRight,
   ArrowUpRight,
+  Download,
+  FileText,
   BarChart3,
   CheckCircle2,
   Database,
@@ -344,6 +346,8 @@ export default function Home() {
       </section>
 
       {/* ABOUT */}
+
+      
       <section id="about" className="bg-[#041321] py-16 sm:py-20">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-2 lg:px-10">
           <div>
@@ -418,6 +422,64 @@ export default function Home() {
         </div>
       </section>
 
+
+      
+      {/* PERFORMANCE STATISTICS */}
+      <section className="bg-[#030e19] px-6 py-14 sm:px-8 sm:py-16">
+        <div className="animate-float mx-auto max-w-5xl rounded-3xl border border-blue-900/60 bg-[#06152f] p-6 shadow-xl sm:p-10">
+          <div className="grid grid-cols-2">
+            <div className="border-b border-r border-blue-900/50 p-5 sm:p-8">
+              <h3 className="text-4xl font-bold text-[#299cff] sm:text-5xl">
+          $10K+
+        </h3>
+        <p className="mt-5 text-lg font-semibold text-white sm:text-xl">
+          Revenue Generated
+        </p>
+        <p className="mt-4 text-sm leading-7 text-slate-400 sm:text-base">
+          Through inbound & outbound efforts
+        </p>
+      </div>
+
+      <div className="border-b border-blue-900/50 p-5 sm:p-8">
+        <h3 className="text-4xl font-bold text-[#299cff] sm:text-5xl">
+          4+
+        </h3>
+        <p className="mt-5 text-lg font-semibold text-white sm:text-xl">
+          Qualified Meetings
+        </p>
+        <p className="mt-4 text-sm leading-7 text-slate-400 sm:text-base">
+          With senior decision-makers / Month
+        </p>
+      </div>
+
+      <div className="border-r border-blue-900/50 p-5 sm:p-8">
+        <h3 className="text-4xl font-bold text-[#299cff] sm:text-5xl">
+          56+
+        </h3>
+        <p className="mt-5 text-lg font-semibold text-white sm:text-xl">
+          Cold Calls
+        </p>
+        <p className="mt-4 text-sm leading-7 text-slate-400 sm:text-base">
+          Made Weekly
+        </p>
+      </div>
+
+      <div className="p-5 sm:p-8">
+        <h3 className="text-4xl font-bold text-[#299cff] sm:text-5xl">
+          72+
+        </h3>
+        <p className="mt-5 text-lg font-semibold text-white sm:text-xl">
+          Targeted Emails
+        </p>
+        <p className="mt-4 text-sm leading-7 text-slate-400 sm:text-base">
+          Sent Weekly
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
       
       {/* SERVICES */}
       <section id="services" className="bg-[#061827] py-16 sm:py-20">
@@ -483,7 +545,7 @@ export default function Home() {
             Each project highlights the tools, strategies and deliverables involved.
           </p>
         </div>
-        <div className="mx-auto mt-8 grid max-w-6xl grid-cols-1 gap-5 px-4 sm:px-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mx-auto mt-8 grid max-w-6xl grid-cols-1 gap-6 px-6 sm:px-8 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project, index) => (
             <article
               key={project.number}
@@ -561,6 +623,37 @@ export default function Home() {
       </section>
 
       {/* CONTACT BANNER */}
+
+
+      {/* RESUME DOWNLOAD */}
+      <section className="bg-[#f8fafc] px-6 py-16 sm:px-8 sm:py-20">
+        <div className="animate-float mx-auto max-w-4xl rounded-[28px] bg-[#020f2b] px-6 py-10 text-center shadow-xl sm:px-10 sm:py-10">
+          <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-blue-900/70">
+            <FileText size={42} className="text-[#249bff]" />
+          </div>
+
+          <h2 className="mx-auto mt-10 max-w-2xl text-3xl font-bold leading-tight text-white sm:text-4xl">
+            Want to Know More About My Experience?
+          </h2>
+
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate-400 sm:text-xl">
+            Download my complete resume to learn more about my professional
+            background, skills and qualifications.
+          </p>
+
+          <a
+            href="/Nkem-Gospel-Resume.pdf"
+            download="Nkem-Gospel-Resume.pdf"
+            className="mx-auto mt-10 inline-flex w-full max-w-md items-center justify-center gap-3 rounded-xl bg-blue-600 px-5 py-5 text-base font-bold text-white transition hover:bg-blue-500 sm:text-xl"
+          >
+            <Download size={25} />
+            Download My Resume
+          </a>
+        </div>
+      </section>
+
+
+
       <ContactSection />
 
       {/* FOOTER */}
@@ -570,6 +663,16 @@ export default function Home() {
             <p className="text-lg font-bold">
               Nkem <span className="text-[#168cf5]">Gospel</span>
             </p>
+
+
+            <nav className="flex flex-wrap items-center gap-x-5 gap-y-3 text-sm text-white/65">
+              <a href="#" className="transition hover:text-[#168cf5]">Home</a>
+              <a href="#about" className="transition hover:text-[#168cf5]">About</a>
+              <a href="#services" className="transition hover:text-[#168cf5]">Services</a>
+              <a href="#projects" className="transition hover:text-[#168cf5]">Projects</a>
+              <a href="#contact" className="transition hover:text-[#168cf5]">Contact</a>
+            </nav>
+
             <p className="mt-1 text-xs text-white/55">
               B2B Growth & Marketing Operations
             </p>
