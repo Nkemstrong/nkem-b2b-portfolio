@@ -204,7 +204,7 @@ export default function Home() {
     <main className="min-h-screen overflow-hidden bg-[#041321] text-white">
 
       {/* NAVIGATION */}
-      <header className="absolute left-0 top-0 z-50 w-full border-b border-white/10 bg-[#061728]/35 backdrop-blur-sm">
+      <header className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-[#061728]/90 shadow-lg shadow-black/10 backdrop-blur-md">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
           <a href="#" className="leading-tight">
             <span className="block text-xl font-bold">
